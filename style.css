@@ -1,23 +1,35 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
 .playarea {
-    padding:32px;
+    flex: 0 0 auto;
+    margin: 32px;
+    padding:8px;
     display:flex;
     flex-direction: column;
     justify-content: center;
+    border: 5px solid #282A29;
+    border-radius: 4px;
 }
 
 .row {
     display:flex;
     justify-content: center;
     align-self: center;
+    background-color:rgb(234, 247, 242)
 }
 
 .cell {
     flex: 0 0 auto;
     width: 20px;
     height: 20px;
-    background-color: black;
+    
+    border: 1px dotted slategray;
+
 }
 
-.hover {
-    background-color: white;
+.cell.hover {
+        background-color:#282A29;
 }
