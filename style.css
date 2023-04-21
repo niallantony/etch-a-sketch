@@ -1,19 +1,35 @@
+* {
+    font-family: 'Courier New', Courier, monospace;
+}
+
 body {
     display: flex;
     justify-content: center;
 }
 
+.container {
+    display:flex;
+    flex-direction: column;
+}
+
+.title {
+    font-size: 3rem;
+    text-align: center;
+    margin-top: 32px;
+}
+
 .playarea {
     flex: 0 0 auto;
     margin: 32px;
-    padding:8px;
     display:flex;
     flex-direction: column;
     justify-content: center;
-    border: 5px solid #282A29;
+    border: 5px solid #383A39;
     border-radius: 4px;
 }
-
+form {
+    align-self: center;
+}
 .row {
     display:flex;
     justify-content: center;
@@ -22,7 +38,7 @@ body {
 }
 
 .cell {
-    flex: 0 0 auto;
+    flex: 0 1 1;
     width: 20px;
     height: 20px;
     
@@ -31,5 +47,10 @@ body {
 }
 
 .cell.hover {
-        background-color:#282A29;
+        background-color:#383A39;
+}
+
+button {
+    align-self: center;
+    margin:16px;
 }

@@ -1,6 +1,9 @@
 const playArea = document.querySelector('.playarea');
+const inputBox = document.querySelector('#input');
 
-let input = 16;
+const button = document.querySelector('button');
+let initial = 16;
+let newValue = 0;
 
 
 
@@ -15,16 +18,26 @@ function drawRow(input) {
             row.appendChild(cell);
         }
     }
-        console.log(i);
 }
 
-function changeColor() {
-
-}
-
-drawRow(input);
-const cells = document.querySelectorAll('.cell');
-cells.forEach(cell => addEventListener('mouseover', (e) => {
+function changeColor(e) {
     const currentCell = e.target
     currentCell.classList.add('hover');
-}));
+}
+
+function updateInput() {
+    let valueInput = document.querySelector('#input').value;
+    const inputValue = valueInput > 100 ?  100 : valueInput;
+    console.log(inputValue);
+    playArea.textContent = '';
+    drawEtcha(inputValue);
+}
+
+function drawEtcha(rows) {
+    drawRow(rows);
+    const cells = document.querySelectorAll('.cell');
+    cells.forEach(cell => addEventListener('mouseover', changeColor));
+}
+
+drawEtcha(initial);
+button.addEventListener('click',updateInput)
