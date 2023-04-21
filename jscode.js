@@ -15,6 +15,8 @@ function drawRow(input) {
         for (j=0;j<input;j++) {
             const cell = document.createElement('div');
             cell.classList.add('cell');
+            const dimension = 640/input;
+            cell.setAttribute('style',`width:${dimension}px;height:${dimension}px`)
             row.appendChild(cell);
         }
     }
