@@ -1,0 +1,23 @@
+.playarea {
+    padding:32px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.row {
+    display:flex;
+    justify-content: center;
+    align-self: center;
+}
+
+.cell {
+    flex: 0 0 auto;
+    width: 20px;
+    height: 20px;
+    background-color: black;
+}
+
+.hover {
+    background-color: white;
+}
