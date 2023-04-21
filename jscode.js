@@ -16,7 +16,7 @@ function drawRow(input) {
             const cell = document.createElement('div');
             cell.classList.add('cell');
             const dimension = 640/input;
-            cell.setAttribute('style',`width:${dimension}px;height:${dimension}px`)
+            cell.setAttribute('style',`width:${dimension}px;height:${dimension}px;background-color:rgb(237,247,242);`)
             row.appendChild(cell);
         }
     }
@@ -24,9 +24,15 @@ function drawRow(input) {
 
 function changeColor(e) {
     const currentCell = e.target
-    currentCell.classList.add('hover');
+    const colour = currentCell.style.backgroundColor;
+    let rgbValue = colour.replace(/[^0-9,]/g,'');
+    console.log(rgbValue);
+    const rgbValues = rgbValue.split(",");
+    const newValues = rgbValues.map((a) => a-20);
+    rgbValue = newValues.toString();
+    console.log(rgbValue);
+    currentCell.style.backgroundColor = `rgb(${rgbValue})`;
 }
-
 function updateInput() {
     let valueInput = document.querySelector('#input').value;
     const inputValue = valueInput > 100 ?  100 : valueInput;
@@ -42,4 +48,4 @@ function drawEtcha(rows) {
 }
 
 drawEtcha(initial);
-button.addEventListener('click',updateInput)
+button.addEventListener('click',updateInput);
